@@ -4,7 +4,12 @@
     data(){
       return{
         title: 'PageHeader',
+        navBarTabs: ['Uomo', 'Donna', 'Bambini'],
+        navBarIcons: ['User.png', 'Heart.png', 'Lock.png'],
       }
+    },
+
+    methods: {
     },
 
   }
@@ -21,26 +26,18 @@
             <nav class="row">
                 <div class="col-3">
                     <ul class="header-select">
-                        <li>
-                            <a href="#">Donna</a>
-                        </li>
-
-                        <li>
-                            <a href="#">Uomo</a>
-                        </li>
-                        
-                        <li>
-                            <a href="#">Bambini</a>
+                        <li v-for="(tab, i) in navBarTabs">
+                            <a href="#">{{tab}}</a>
                         </li>
                     </ul>
                 </div>
 
-                <img src="../assets/img/boolean-logo.png" alt="" class="logo-img">
+                <img src="/img/boolean-logo.png" alt="" class="logo-img">
 
                 <div class="col-3 txt-al-r"> 
-                    <a href="#"><img src="../assets/img/social-icons/User.png" alt="" height="20" width="20"></a>
-                    <a href="#"><img src="../assets/img/social-icons/Heart.png" alt="" height="20" width="20"></a>
-                    <a href="#"><img src="../assets/img/social-icons/Lock.png" alt="" height="20" width="20"></a>
+                    <a href="#" v-for="(icon, i) in navBarIcons">
+                        <img :src="`/img/social-icons/${icon}`" alt="" height="20" width="20">
+                    </a>
                 </div>
             </nav>
         </div>
@@ -72,8 +69,11 @@
     .header-select{
         li{
             display: inline-block;
-            margin-right: 5px;
+            margin-right: 10px;
             font-weight: bold;
+            &:hover{
+                color: wheat;
+            }
         }
     }
 </style>
