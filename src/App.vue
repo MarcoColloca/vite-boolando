@@ -24,11 +24,13 @@
 
 
 <template>
-  <div>
-    <PageHeader></PageHeader>
-    <PageMain></PageMain>
-    <PageFooter></PageFooter>
-  </div>
+
+  <PageHeader></PageHeader>
+
+  <PageMain></PageMain>
+  
+  <PageFooter></PageFooter>
+
 </template>
 
 
