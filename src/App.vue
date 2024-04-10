@@ -1,5 +1,6 @@
 <script>
   import PageHeader from './components/PageHeader.vue'
+  import PageFooter from './components/PageFooter.vue'
 
   export default{
     data(){
@@ -10,7 +11,7 @@
 
     components:{
       PageHeader,
-
+      PageFooter,
     },
   }
 </script>
@@ -23,11 +24,7 @@
 <template>
   <div>
     <PageHeader></PageHeader>
-  </div>
-  <div>
-    <h1 class="title">
-      {{ title }}
-    </h1>
+    <PageFooter></PageFooter>
   </div>
 </template>
 
