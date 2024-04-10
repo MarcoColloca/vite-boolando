@@ -16,12 +16,12 @@
             <div class="row page-main__box-card">
                 <div class="col-4 card">
                     <div class="card__img">
-                        <img src="../assets/img/1.webp" alt="">
+                        <img src="/img/1.webp" alt="">
                         <span class="badge-discount">-50%</span>
                         <span class="badge-type">Sostenibilità</span>
                         <span class="box-heart">&hearts;</span>
                         <div class="overlay">
-                            <img src="../assets/img/1b.webp" alt="">
+                            <img src="/img/1b.webp" alt="">
                         </div>
                     </div>
 
@@ -35,11 +35,11 @@
 
                 <div class="col-4 card">
                     <div class="card__img">
-                        <img src="../assets/img/2.webp" alt="">
+                        <img src="/img/2.webp" alt="">
                         <span class="badge-discount">-30%</span>
                         <span class="box-heart">&hearts;</span>
                         <div class="overlay">
-                            <img src="../assets/img/2b.webp" alt="">
+                            <img src="/img/2b.webp" alt="">
                         </div>
                     </div>
 
@@ -53,11 +53,11 @@
 
                 <div class="col-4 card">
                     <div class="card__img">
-                        <img src="../assets/img/3.webp" alt="">
+                        <img src="/img/3.webp" alt="">
                         <span class="badge-discount">-30%</span>
                         <span class="box-heart">&hearts;</span>
                         <div class="overlay">
-                            <img src="../assets/img/3b.webp" alt="">
+                            <img src="/img/3b.webp" alt="">
                         </div>
                     </div>
 
@@ -71,12 +71,12 @@
 
                 <div class="col-4 card">
                     <div class="card__img">
-                        <img src="../assets/img/4.webp" alt="">
+                        <img src="/img/4.webp" alt="">
                         <span class="badge-discount">-50%</span>
                         <span class="badge-type">Sostenibilità</span>
                         <span class="box-heart">&hearts;</span>
                         <div class="overlay">
-                            <img src="../assets/img/4b.webp" alt="">
+                            <img src="/img/4b.webp" alt="">
                         </div>
                     </div>
 
@@ -90,10 +90,10 @@
 
                 <div class="col-4 card">
                     <div class="card__img">
-                        <img src="../assets/img/5.webp" alt="">
+                        <img src="/img/5.webp" alt="">
                         <span class="box-heart">&hearts;</span>
                         <div class="overlay">
-                            <img src="../assets/img/5b.webp" alt="">
+                            <img src="/img/5b.webp" alt="">
                         </div>
                     </div>
 
@@ -106,11 +106,11 @@
 
                 <div class="col-4 card">
                     <div class="card__img">
-                        <img src="../assets/img/6.webp" alt="">
+                        <img src="/img/6.webp" alt="">
                         <span class="badge-type badge-alone">Sostenibilità</span>
                         <span class="box-heart">&hearts;</span>
                         <div class="overlay">
-                            <img src="../assets/img/6b.webp" alt="">
+                            <img src="/img/6b.webp" alt="">
                         </div>
                     </div>
 

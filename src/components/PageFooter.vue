@@ -34,19 +34,19 @@
                     <p class="social-txt">Trovaci anche su</p>
                     <ul class="social-icons">
                         <li>
-                            <a href="http://www.twitter.com/" target="_blank"><img src="../assets/img/social-icons/Twitter-Icon.png" alt="" width="20" height="15"></a>
+                            <a href="http://www.twitter.com/" target="_blank"><img src="/img/social-icons/Twitter-Icon.png" alt="" width="20" height="15"></a>
                         </li>
 
                         <li>
-                            <a href="http://www.instagram.com/" target="_blank"><img src="../assets/img/social-icons/Instagram-Icon.webp" alt="" width="20" height="15"></a>
+                            <a href="http://www.instagram.com/" target="_blank"><img src="/img/social-icons/Instagram-Icon.webp" alt="" width="20" height="15"></a>
                         </li>
                         
                         <li>
-                           <a href="https://www.facebook.com/" target="_blank"><img src="../assets/img/social-icons/Facebook-icon.webp" alt="" width="20" height="15"></a> 
+                           <a href="https://www.facebook.com/" target="_blank"><img src="/img/social-icons/Facebook-Icon.webp" alt="" width="20" height="15"></a> 
                         </li>
                         
                         <li> 
-                           <a href="https://www.youtube.com/" target="_blank"> <img src="../assets/img/social-icons/YouTube-Icon.png" alt="" width="20" height="15"> </a>
+                           <a href="https://www.youtube.com/" target="_blank"> <img src="/img/social-icons/YouTube-Icon.png" alt="" width="20" height="15"> </a>
                         </li>
                     </ul>
                 </div>
