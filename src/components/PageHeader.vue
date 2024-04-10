@@ -4,7 +4,7 @@
     data(){
       return{
         title: 'PageHeader',
-        navBarTabs: ['Uomo', 'Donna', 'Bambini'],
+        navBarTabs: ['Donna', 'Uomo', 'Bambini'],
         navBarIcons: ['User.png', 'Heart.png', 'Lock.png'],
       }
     },
@@ -24,19 +24,21 @@
     <header class="page-header">
         <div class="container">
             <nav class="row">
-                <div class="col-3">
+                <div class="col-4">
                     <ul class="header-select">
                         <li v-for="(tab, i) in navBarTabs">
                             <a href="#">{{tab}}</a>
                         </li>
                     </ul>
                 </div>
+                <div class="col-4 txt-center">
+                    <img src="/img/boolean-logo.png" alt="" class="logo-img">
 
-                <img src="/img/boolean-logo.png" alt="" class="logo-img">
+                </div>
 
-                <div class="col-3 txt-al-r"> 
+                <div class="col-4 txt-end header-icons"> 
                     <a href="#" v-for="(icon, i) in navBarIcons">
-                        <img :src="`/img/social-icons/${icon}`" alt="" height="20" width="20">
+                        <img :src="`/img/social-icons/${icon}`" alt="" height="25" width="25">
                     </a>
                 </div>
             </nav>
@@ -66,13 +68,24 @@
     }
 
 
+    .header-icons{
+        a{
+            margin: 5px;
+            img{
+                &:hover{
+                    filter: invert(1);
+                }
+            }       
+        }
+    }
+
     .header-select{
         li{
             display: inline-block;
             margin-right: 10px;
             font-weight: bold;
             &:hover{
-                color: wheat;
+                color: rgb(0, 0, 0);
             }
         }
     }
