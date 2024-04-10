@@ -127,6 +127,8 @@
 
 
 <style lang="scss" scoped>
+    @use '../style/partials/variables' as *;
+
     .page-main{
         padding: 40px 0px;
     }
@@ -157,11 +159,11 @@
     }
 
     .badge-discount{
-        background-color: red;
+        background-color: $color_red;
     }
 
     .badge-type{
-        background-color: green;
+        background-color: $color_green;
         left: 50px;
     }
 
@@ -176,7 +178,7 @@
         padding: 0px 15px;
         cursor: pointer;
         &:hover{
-            color: red;
+            color: $color_red;
         }
     }
 
@@ -195,7 +197,7 @@
     }
 
     .card__description__price{
-        color: red;
+        color: $color_red;
         font-weight: bold;
         font-size: 16px;
     }
