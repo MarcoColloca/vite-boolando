@@ -133,6 +133,11 @@
 
     .card{
         position: relative;
+        &:hover{
+            .overlay{
+                opacity: 1;
+            }
+        }
     }
 
     .card__img{
@@ -149,10 +154,6 @@
         align-items: center;
         opacity: 0;
         z-index: 1;
-    }
-
-    .card:hover .overlay {
-        opacity: 1;
     }
 
     .badge-discount{
