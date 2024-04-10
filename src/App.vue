@@ -26,8 +26,8 @@
 
 
 
-<style>
-  .title{
-    color: crimson;
-  }
+<style lang="scss">
+
+  @use './style/general.scss';
+
 </style>

@@ -1,0 +1,7 @@
+/* Questo file Radice contiene ogni file di stile che non sia specifico. L'ordine con cui vengono importati, stabilisce la spcificità.*/
+
+@use './partials/reset';
+@use './partials/common';
+@use './partials/layout';
+@use './partials/utilities';
+
