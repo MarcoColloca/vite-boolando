@@ -1,10 +1,16 @@
 <script>
+    import CardComponent from './CardComponent.vue'
+
     export default{
         data(){
             return{
                 test:'Page Main',
             }
-        }
+        },
+        
+        components:{
+            CardComponent,
+        },
     }
 </script>
 
@@ -12,8 +18,9 @@
 
 <template>
     <main class="page-main">
+        <CardComponent></CardComponent>
         <div class="container">
-            <div class="row page-main__box-card">
+            <div class="row page-main__box-card">                
                 <div class="col-4 card">
                     <div class="card__img">
                         <img src="/img/1.webp" alt="">
