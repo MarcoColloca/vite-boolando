@@ -1,15 +1,120 @@
 <script>
-    import CardComponent from './CardComponent.vue'
+    import CardBoolando from './single-components/CardBoolando.vue'
 
     export default{
         data(){
             return{
                 test:'Page Main',
+                products: [
+                    {
+                        id: 1,
+                        frontImage: "1.webp",
+                        backImage: "1b.webp",
+                        brand: "Levi's",
+                        name: "Relaxed Fit",
+                        price: 29.99,
+                        isInFavorites: true,
+                        badges: [
+                            {
+                                type: "tag",
+                                value: "Sostenibilità"
+                            },
+                            {
+                                type: "discount",
+                                value: "-50%"
+                            }
+                        ]
+                    },
+                    {
+                        id: 2,
+                        frontImage: "2.webp",
+                        backImage: "2b.webp",
+                        brand: "Guess",
+                        name: "Roses Tee",
+                        price: 20.99,
+                        isInFavorites: true,
+                        badges: [
+                            {
+                                type: "discount",
+                                value: "-30%"
+                            }
+                        ]
+                    },
+                    {
+                        id: 3,
+                        frontImage: "3.webp",
+                        backImage: "3b.webp",
+                        brand: "Come Zucchero Filato",
+                        name: "Voglia di colori pastello",
+                        price: 129.99,
+                        isInFavorites: false,
+                        badges: [
+                            {
+                                type: "discount",
+                                value: "-30%"
+                            }
+                        ]
+                    },
+                    {
+                        id: 4,
+                        frontImage: "4.webp",
+                        backImage: "4b.webp",
+                        brand: "Levi's",
+                        name: "Tee Unisex",
+                        price: 14.99,
+                        isInFavorites: false,
+                        badges: [
+                            {
+                                type: "tag",
+                                value: "Sostenibilità"
+                            },
+                            {
+                                type: "discount",
+                                value: "-50%"
+                            }
+                        ]
+                    },
+                    {
+                        id: 5,
+                        frontImage: "5.webp",
+                        backImage: "5b.webp",
+                        brand: "Maya Deluxe",
+                        name: "Stripe Bodice",
+                        price: 99.99,
+                        isInFavorites: true,
+                        badges: [
+                            {
+                                type: "tag",
+                                value: "Sostenibilità"
+                            },
+                            {
+                                type: "discount",
+                                value: "-50%"
+                            }
+                        ]
+                    },
+                    {
+                        id: 6,
+                        frontImage: "6.webp",
+                        backImage: "6b.webp",
+                        brand: "Esprit",
+                        name: "Maglione - Black",
+                        price: 29.99,
+                        isInFavorites: true,
+                        badges: [
+                            {
+                                type: "tag",
+                                value: "Sostenibilità"
+                            }
+                        ]
+                    }
+                ]
+
             }
         },
         
         components:{
-            CardComponent,
+            CardBoolando,
         },
     }
 </script>
@@ -18,115 +123,9 @@
 
 <template>
     <main class="page-main">
-        <CardComponent></CardComponent>
         <div class="container">
             <div class="row page-main__box-card">                
-                <div class="col-4 card">
-                    <div class="card__img">
-                        <img src="/img/1.webp" alt="">
-                        <span class="badge-discount">-50%</span>
-                        <span class="badge-type">Sostenibilità</span>
-                        <span class="box-heart">&hearts;</span>
-                        <div class="overlay">
-                            <img src="/img/1b.webp" alt="">
-                        </div>
-                    </div>
-
-                    <div class="card__description">
-                        <span class="card__description__brand">Levi's</span>
-                        <span class="card__description__item">RELAXED FIT TEE UNISEX</span>
-                        <span class="card__description__price">14.99 &euro;</span> 
-                        <span class="card__description__old-price">29.99 &euro;</span> 
-                    </div>
-                </div>
-
-                <div class="col-4 card">
-                    <div class="card__img">
-                        <img src="/img/2.webp" alt="">
-                        <span class="badge-discount">-30%</span>
-                        <span class="box-heart">&hearts;</span>
-                        <div class="overlay">
-                            <img src="/img/2b.webp" alt="">
-                        </div>
-                    </div>
-
-                    <div class="card__description">
-                        <span class="card__description__brand">Guess</span>
-                        <span class="card__description__item">ROSES TEE</span>
-                        <span class="card__description__price">20.99 &euro;</span> 
-                        <span class="card__description__old-price">29.99 &euro;</span> 
-                    </div>
-                </div>
-
-                <div class="col-4 card">
-                    <div class="card__img">
-                        <img src="/img/3.webp" alt="">
-                        <span class="badge-discount">-30%</span>
-                        <span class="box-heart">&hearts;</span>
-                        <div class="overlay">
-                            <img src="/img/3b.webp" alt="">
-                        </div>
-                    </div>
-
-                    <div class="card__description">
-                        <span class="card__description__brand">Come Zucchero Filato</span>
-                        <span class="card__description__item">VOGLIA DI COLORI PASTELLO</span>
-                        <span class="card__description__price">129.99 &euro;</span> 
-                        <span class="card__description__old-price">184.99 &euro;</span> 
-                    </div>
-                </div>
-
-                <div class="col-4 card">
-                    <div class="card__img">
-                        <img src="/img/4.webp" alt="">
-                        <span class="badge-discount">-50%</span>
-                        <span class="badge-type">Sostenibilità</span>
-                        <span class="box-heart">&hearts;</span>
-                        <div class="overlay">
-                            <img src="/img/4b.webp" alt="">
-                        </div>
-                    </div>
-
-                    <div class="card__description">
-                        <span class="card__description__brand">Levi's</span>
-                        <span class="card__description__item">TEE UNISEX</span>
-                        <span class="card__description__price">14.99 &euro;</span> 
-                        <span class="card__description__old-price">29.99 &euro;</span> 
-                    </div>
-                </div>
-
-                <div class="col-4 card">
-                    <div class="card__img">
-                        <img src="/img/5.webp" alt="">
-                        <span class="box-heart">&hearts;</span>
-                        <div class="overlay">
-                            <img src="/img/5b.webp" alt="">
-                        </div>
-                    </div>
-
-                    <div class="card__description">
-                        <span class="card__description__brand">Maya Deluxe</span>
-                        <span class="card__description__item">STRIPE BODICE</span>
-                        <span class="card__description__price">99 &euro;</span> 
-                    </div>
-                </div>
-
-                <div class="col-4 card">
-                    <div class="card__img">
-                        <img src="/img/6.webp" alt="">
-                        <span class="badge-type badge-alone">Sostenibilità</span>
-                        <span class="box-heart">&hearts;</span>
-                        <div class="overlay">
-                            <img src="/img/6b.webp" alt="">
-                        </div>
-                    </div>
-
-                    <div class="card__description">
-                        <span class="card__description__brand">Esprit</span>
-                        <span class="card__description__item">MAGLIONE - BLACK</span>
-                        <span class="card__description__price">29.99 &euro;</span> 
-                    </div>
-                </div>
+                <CardBoolando></CardBoolando>
             </div>
         </div>
     </main>
