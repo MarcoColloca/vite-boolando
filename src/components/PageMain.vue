@@ -1,11 +1,15 @@
 <script>
     import CardBoolando from './single-components/CardBoolando.vue'
+    import dataProduct from '../assets/db.json'
 
     export default{
+
+
         data(){
             return{
+                products: dataProduct.products,
                 test:'Page Main',
-                currentBadgeIndex: 0,
+                /*
                 products: [
                     {
                         id: 1,
@@ -110,7 +114,7 @@
                         ]
                     }
                 ]
-
+                */
             }
         },
         
