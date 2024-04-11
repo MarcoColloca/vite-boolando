@@ -13,6 +13,7 @@
         data(){
             return{
                 test: 'test',
+                discount: '',
             }
         },
 
@@ -44,17 +45,25 @@
 
             findDiscount(){
 
+                let array = [];                
+
                 for(let i = 0; i < this.cardBadges.length; i++){
                     //console.log(this.cardBadges[i], i)
                     const object = this.cardBadges[i]
                     
                     
-                    console.log(Object.values(object))
+                    //console.log(Object.values(object))
                     if(Object.values(object).includes('discount')){
-                        return object.value
+                        
+                        array.push(object.value)
                     }
                 }
 
+                for(let j = 0; j < array.length; i++){
+                    console.log(array[j])
+                    this.discount = array[j]
+                    return array[j]
+                }
             },
 
             discountPrice(){
@@ -83,7 +92,7 @@
         <div class="card__img">
             <img :src="`/img/${cardImgSrc}`" alt="">
             <div class="badge-container">
-                <span class="badge-discount" v-show="findDiscount() !== 'hide'">{{ findDiscount() }}</span>
+                <span class="badge-discount" v-show="findDiscount() === this.discount">{{ findDiscount() }}</span>
                 <span class="badge-type" v-show="findBadgeType() !== 'hide'">{{ findBadgeType() }}</span>
             </div>
             <span @click="isFavorite()" class="box-heart">&hearts;</span>
