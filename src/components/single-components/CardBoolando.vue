@@ -1,7 +1,13 @@
 <script>
     export default{
-
-
+        props: {
+            cardImgSrc: String,
+            cardHiddenImgSrc: String,
+            cardBrand: String,
+            cardName: String,
+            cardPrice: Number,
+            cardBadges: Array,
+        },
         
         data(){
             return{
@@ -9,7 +15,54 @@
             }
         },
 
-        mounted(){
+        methods:{
+
+
+            findBadgeType(){
+                
+                for(let i = 0; i < this.cardBadges.length; i++){
+                    //console.log(this.cardBadges[i], i)
+                    const object = this.cardBadges[i]
+                    
+                    
+                    //console.log(Object.values(object))
+                    if(Object.values(object).includes('tag')){
+                        return object.value
+                    }
+                }
+
+            },
+
+            findDiscount(){
+
+                for(let i = 0; i < this.cardBadges.length; i++){
+                    //console.log(this.cardBadges[i], i)
+                    const object = this.cardBadges[i]
+                    
+                    
+                    //console.log(Object.values(object))
+                    if(Object.values(object).includes('discount')){
+                        return object.value
+                    }
+                }
+
+            },
+
+            discountPrice(){
+
+                let basePrice = this.cardPrice;
+                let discount = this.findDiscount()
+                //console.log(typeof discount, discount)
+
+                if(discount !== undefined){
+                    discount = basePrice * (parseInt(discount.slice(1, 3))/100)
+                } else{
+                    discount = 0;
+                }
+
+                return (this.cardPrice - discount).toFixed(2)
+            },
+
         }
     }
 </script>
@@ -19,20 +72,22 @@
 <template>
     <div class="col-4 card">
         <div class="card__img">
-            <img src="/img/1.webp" alt="">
-            <span class="badge-discount">-50%</span>
-            <span class="badge-type">Sostenibilità</span>
+            <img :src="`/img/${cardImgSrc}`" alt="">
+            <div class="badge-container">
+                <span class="badge-discount" v-show="findDiscount() !== string">{{ findDiscount() }}</span>
+                <span class="badge-type" v-show="findBadgeType() !== string">{{ findBadgeType() }}</span>
+            </div>
             <span class="box-heart">&hearts;</span>
             <div class="overlay">
-                <img src="/img/1b.webp" alt="">
+                <img :src="`/img/${cardHiddenImgSrc}`" alt="">
             </div>
         </div>
 
         <div class="card__description">
-            <span class="card__description__brand">Levi's</span>
-            <span class="card__description__item">RELAXED FIT TEE UNISEX</span>
-            <span class="card__description__price">14.99 &euro;</span> 
-            <span class="card__description__old-price">29.99 &euro;</span> 
+            <span class="card__description__brand">{{ cardBrand }}</span>
+            <span class="card__description__item">{{ cardName }}</span>
+            <span class="card__description__price">{{ discountPrice() }} &euro;</span> 
+            <span class="card__description__old-price">{{ cardPrice }} &euro;</span> 
         </div>
     </div>
 
@@ -69,13 +124,24 @@
         z-index: 1;
     }
 
+
+    .badge-container{
+        padding: 5px;
+        color: white;
+        position: absolute;
+        display: flex;
+        bottom: 50px;
+        z-index: 99;
+    }
+
     .badge-discount{
         background-color: $color_red;
+        padding: 5px;
     }
 
     .badge-type{
         background-color: $color_green;
-        left: 50px;
+        padding: 5px;
     }
 
     .box-heart{
@@ -118,17 +184,7 @@
         text-decoration: line-through;
     }
 
-    [class^="badge"]{
-        padding: 5px;
-        color: white;
-        position: absolute;
-        bottom: 50px;
-        z-index: 99;
-    }
 
-    .badge-type.badge-alone,
-    .badge-discount.badge-alone{
-        left: 0;
-    }
+
 
 </style>

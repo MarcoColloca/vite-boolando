@@ -5,6 +5,7 @@
         data(){
             return{
                 test:'Page Main',
+                currentBadgeIndex: 0,
                 products: [
                     {
                         id: 1,
@@ -117,6 +118,7 @@
             CardBoolando,
         },
 
+
         methods:{
             hideCardImg(){
                 console.log('ciao')
@@ -133,8 +135,16 @@
             <div class="row page-main__box-card">                
                 <CardBoolando
                  v-for="(card,i) in products"
+                 :key="card.id"
+                 :cardImgSrc="card.frontImage"
+                 :cardHiddenImgSrc="card.backImage"
+                 :cardBrand="card.brand"
+                 :cardName="card.name"
+                 :cardPrice="card.price"
+                 :cardNewPrice="card.price"
+                 :cardBadges="card.badges"
                 ></CardBoolando>
-            </div>
+            </div>           
         </div>
     </main>
 </template>
