@@ -135,6 +135,7 @@
 
     .card{
         position: relative;
+        margin-bottom: 20px;
         &:hover{
             .overlay{
                 opacity: 1;
@@ -200,6 +201,7 @@
         color: $color_red;
         font-weight: bold;
         font-size: 16px;
+        margin-right: 10px;
     }
 
     .card__description__old-price{
@@ -214,7 +216,8 @@
         z-index: 99;
     }
 
-    .badge-alone{
+    .badge-type.badge-alone,
+    .badge-discount.badge-alone{
         left: 0;
     }
 </style>
