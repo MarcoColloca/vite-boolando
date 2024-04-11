@@ -21,8 +21,12 @@
 
 
             isFavorite(){
-                //this.cardFavorite = !this.cardFavorite
+                
                 console.log(this.cardFavorite)
+
+                if(this.cardFavorite === true){
+                    return 'text-red'
+                }
             },
 
 
@@ -60,7 +64,7 @@
                 }
 
                 for(let j = 0; j < array.length; i++){
-                    console.log(array[j])
+                    
                     this.discount = array[j]
                     return array[j]
                 }
@@ -95,7 +99,7 @@
                 <span class="badge-discount" v-show="findDiscount() === this.discount">{{ findDiscount() }}</span>
                 <span class="badge-type" v-show="findBadgeType() !== 'hide'">{{ findBadgeType() }}</span>
             </div>
-            <span @click="isFavorite()" class="box-heart">&hearts;</span>
+            <span :class="isFavorite()" class="box-heart">&hearts;</span>
             <div class="overlay">
                 <img :src="`/img/${cardHiddenImgSrc}`" alt="">
             </div>
@@ -167,7 +171,6 @@
         top: 10px;
         right: 0px;
         font-size: 35px;
-        color: black;
         background-color: white;
         z-index: 99;
         padding: 0px 15px;
