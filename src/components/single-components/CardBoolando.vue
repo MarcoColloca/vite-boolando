@@ -7,6 +7,7 @@
             cardName: String,
             cardPrice: Number,
             cardBadges: Array,
+            cardFavorite: Boolean,
         },
         
         data(){
@@ -16,6 +17,12 @@
         },
 
         methods:{
+
+
+            isFavorite(){
+                //this.cardFavorite = !this.cardFavorite
+                console.log(this.cardFavorite)
+            },
 
 
             findBadgeType(){
@@ -28,6 +35,8 @@
                     //console.log(Object.values(object))
                     if(Object.values(object).includes('tag')){
                         return object.value
+                    }else{
+                        return 'hide'
                     }
                 }
 
@@ -40,7 +49,7 @@
                     const object = this.cardBadges[i]
                     
                     
-                    //console.log(Object.values(object))
+                    console.log(Object.values(object))
                     if(Object.values(object).includes('discount')){
                         return object.value
                     }
@@ -74,10 +83,10 @@
         <div class="card__img">
             <img :src="`/img/${cardImgSrc}`" alt="">
             <div class="badge-container">
-                <span class="badge-discount" v-show="findDiscount() !== string">{{ findDiscount() }}</span>
-                <span class="badge-type" v-show="findBadgeType() !== string">{{ findBadgeType() }}</span>
+                <span class="badge-discount" v-show="findDiscount() !== 'hide'">{{ findDiscount() }}</span>
+                <span class="badge-type" v-show="findBadgeType() !== 'hide'">{{ findBadgeType() }}</span>
             </div>
-            <span class="box-heart">&hearts;</span>
+            <span @click="isFavorite()" class="box-heart">&hearts;</span>
             <div class="overlay">
                 <img :src="`/img/${cardHiddenImgSrc}`" alt="">
             </div>

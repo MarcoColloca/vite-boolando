@@ -143,6 +143,7 @@
                  :cardPrice="card.price"
                  :cardNewPrice="card.price"
                  :cardBadges="card.badges"
+                 :cardFavorite="card.isInFavorites"
                 ></CardBoolando>
             </div>           
         </div>
