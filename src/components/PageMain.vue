@@ -1,13 +1,15 @@
 <script>
     import CardBoolando from './single-components/CardBoolando.vue'
-    import dataProduct from '../assets/db.json'
+    //import dataProduct from '../assets/../db.json'
+    import { store } from '../store'
 
     export default{
 
 
         data(){
             return{
-                products: dataProduct.products,
+                //products: dataProduct.products,
+                store, 
                 test:'Page Main',
                 /*
                 products: [
@@ -137,7 +139,7 @@
     <main class="page-main">
         <div class="container">
             <div class="row page-main__box-card">
-                <div class="col-4" v-for="(card,i) in products">
+                <div class="col-4" v-for="(card,i) in store.products">
 
                     <CardBoolando                     
                      :key="card.id"
