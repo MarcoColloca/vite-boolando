@@ -20,25 +20,23 @@
 
         methods:{
 
-
+            // funzione che serve per individuare il valore della proprietà isFavourite e ritornare una stringa da applicare come classe nel caso il valore sia true
             isFavorite(){
                 
-                //console.log(this.cardFavorite)
-
                 if(this.cardFavorite === true){
                     return 'text-red'
                 }
             },
 
-
+            //funzione che ciclando gli oggetti contenuti nell'Array cardBadges trova gli oggetti con una chiave che abbia valore tag e ritorna il valore della chiave value dell'oggetto stesso
             findBadgeType(){
                 
                 for(let i = 0; i < this.cardBadges.length; i++){
-                    //console.log(this.cardBadges[i], i)
+                    
                     const object = this.cardBadges[i]
                     
                     
-                    //console.log(Object.values(object))
+                    
                     if(Object.values(object).includes('tag')){
                         this.badge = object.value
                         return object.value
@@ -47,16 +45,18 @@
 
             },
 
+            //funzione che ciclando gli oggetti contenuti nell'Array cardBadges trova gli oggetti con una chiave che abbia valore discount e ritorna il valore della chiave value dell'oggetto stesso
+            // in questo caso i valori vengono pushati in un array di supporto in modo da rendere più semplice la funzione che va a calcolare il prezzo scontato
             findDiscount(){
 
                 let array = [];                
 
                 for(let i = 0; i < this.cardBadges.length; i++){
-                    //console.log(this.cardBadges[i], i)
+                    
                     const object = this.cardBadges[i]
                     
                     
-                    //console.log(Object.values(object))
+                    
                     if(Object.values(object).includes('discount')){
                         
                         array.push(object.value)
@@ -70,11 +70,13 @@
                 }
             },
 
+
+            // funzinoe che sfrutta la funzione findDiscount() per calcolare il prezzo scontato. Questa funziona ritorna il prezzo scontato, se lo sconto è diverso da 0 o il prezzo base se lo sconto è === a 0
             discountPrice(){
 
                 let basePrice = this.cardPrice;
                 let discount = this.findDiscount()
-                //console.log(typeof discount, discount)
+                
 
                 if(discount !== undefined){
                     discount = basePrice * (parseInt(discount.slice(1, 3))/100)
