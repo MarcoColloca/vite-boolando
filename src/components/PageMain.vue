@@ -137,7 +137,7 @@
     <main class="page-main">
         <div class="container">
             <div class="row page-main__box-card">
-                <div class="col-4 card" v-for="(card,i) in products">
+                <div class="col-4" v-for="(card,i) in products">
 
                     <CardBoolando                     
                      :key="card.id"
@@ -150,6 +150,7 @@
                      :cardBadges="card.badges"
                      :cardFavorite="card.isInFavorites"
                     ></CardBoolando>
+                    
                 </div>
             </div>           
         </div>
@@ -158,10 +159,6 @@
 
 
 <style lang="scss" scoped>
-    .card{
-        position: relative;
-        margin-bottom: 20px;
-    }
 
     .page-main{
         padding: 40px 0px;

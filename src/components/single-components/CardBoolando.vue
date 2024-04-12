@@ -96,43 +96,47 @@
 
 
 <template>
-    <div class="card__img">
-        <img :src="`/img/${cardImgSrc}`" alt="">
-        <div class="badge-container">
-            <span class="badge-discount" v-show="findDiscount() === this.discount">{{ findDiscount() }}</span>
-            <span class="badge-type" v-show="findBadgeType() === this.badge">{{ findBadgeType() }}</span>
+    <div class="card">
+        <div class="card__img">
+            <img :src="`/img/${cardImgSrc}`" alt="">
+            <div class="badge-container">
+                <span class="badge-discount" v-show="findDiscount() === this.discount">{{ findDiscount() }}</span>
+                <span class="badge-type" v-show="findBadgeType() === this.badge">{{ findBadgeType() }}</span>
+            </div>
+            <span :class="isFavorite()" class="box-heart">&hearts;</span>
+            <div class="overlay">
+                <img :src="`/img/${cardHiddenImgSrc}`" alt="">
+            </div>
         </div>
-        <span :class="isFavorite()" class="box-heart">&hearts;</span>
-        <div class="overlay">
-            <img :src="`/img/${cardHiddenImgSrc}`" alt="">
-        </div>
-    </div>
-
-    <div class="card__description">
-        <span class="card__description__brand">{{ cardBrand }}</span>
-        <span class="card__description__item">{{ cardName }}</span>
-        <span class="card__description__price">{{ discountPrice() }} &euro;</span> 
-        <span class="card__description__old-price" v-show="discountPrice() !== cardPrice">{{ cardPrice }} &euro;</span> 
-    </div>
     
-
+        <div class="card__description">
+            <span class="card__description__brand">{{ cardBrand }}</span>
+            <span class="card__description__item">{{ cardName }}</span>
+            <span class="card__description__price">{{ discountPrice() }} &euro;</span> 
+            <span class="card__description__old-price" v-show="discountPrice() !== cardPrice">{{ cardPrice }} &euro;</span> 
+        </div>
+    </div>    
 </template>
 
 
 <style lang="scss" scoped>
     @use '../../style/partials/variables' as *;
 
-
-
-
-    .card__img{
+    .card{
         position: relative;
-        display: flex;
+        margin-bottom: 20px;
+
         &:hover{
             .overlay{
                 opacity: 1;
             }
         }
+    }
+
+
+    .card__img{
+        position: relative;
+        display: flex;      
     }
 
     .overlay {
