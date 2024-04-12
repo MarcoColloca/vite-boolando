@@ -26,7 +26,7 @@
     methods:{
       fetchProducts(){
         axios.get('http://localhost:3000/products').then((res) =>{	
-          store.products = res.data      
+          this.store.products = res.data      
         })
       }
     }
