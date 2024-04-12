@@ -14,6 +14,7 @@
             return{
                 test: 'test',
                 discount: '',
+                badge: '',
             }
         },
 
@@ -39,9 +40,8 @@
                     
                     //console.log(Object.values(object))
                     if(Object.values(object).includes('tag')){
+                        this.badge = object.value
                         return object.value
-                    }else{
-                        return 'hide'
                     }
                 }
 
@@ -97,7 +97,7 @@
             <img :src="`/img/${cardImgSrc}`" alt="">
             <div class="badge-container">
                 <span class="badge-discount" v-show="findDiscount() === this.discount">{{ findDiscount() }}</span>
-                <span class="badge-type" v-show="findBadgeType() !== 'hide'">{{ findBadgeType() }}</span>
+                <span class="badge-type" v-show="findBadgeType() === this.badge">{{ findBadgeType() }}</span>
             </div>
             <span :class="isFavorite()" class="box-heart">&hearts;</span>
             <div class="overlay">
