@@ -136,19 +136,21 @@
 <template>
     <main class="page-main">
         <div class="container">
-            <div class="row page-main__box-card">                
-                <CardBoolando
-                 v-for="(card,i) in products"
-                 :key="card.id"
-                 :cardImgSrc="card.frontImage"
-                 :cardHiddenImgSrc="card.backImage"
-                 :cardBrand="card.brand"
-                 :cardName="card.name"
-                 :cardPrice="card.price"
-                 :cardNewPrice="card.price"
-                 :cardBadges="card.badges"
-                 :cardFavorite="card.isInFavorites"
-                ></CardBoolando>
+            <div class="row page-main__box-card">
+                <div class="col-4 card" v-for="(card,i) in products">
+
+                    <CardBoolando                     
+                     :key="card.id"
+                     :cardImgSrc="card.frontImage"
+                     :cardHiddenImgSrc="card.backImage"
+                     :cardBrand="card.brand"
+                     :cardName="card.name"
+                     :cardPrice="card.price"
+                     :cardNewPrice="card.price"
+                     :cardBadges="card.badges"
+                     :cardFavorite="card.isInFavorites"
+                    ></CardBoolando>
+                </div>
             </div>           
         </div>
     </main>
@@ -156,6 +158,10 @@
 
 
 <style lang="scss" scoped>
+    .card{
+        position: relative;
+        margin-bottom: 20px;
+    }
 
     .page-main{
         padding: 40px 0px;

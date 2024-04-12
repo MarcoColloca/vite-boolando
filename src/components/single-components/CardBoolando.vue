@@ -96,26 +96,25 @@
 
 
 <template>
-    <div class="col-4 card">
-        <div class="card__img">
-            <img :src="`/img/${cardImgSrc}`" alt="">
-            <div class="badge-container">
-                <span class="badge-discount" v-show="findDiscount() === this.discount">{{ findDiscount() }}</span>
-                <span class="badge-type" v-show="findBadgeType() === this.badge">{{ findBadgeType() }}</span>
-            </div>
-            <span :class="isFavorite()" class="box-heart">&hearts;</span>
-            <div class="overlay">
-                <img :src="`/img/${cardHiddenImgSrc}`" alt="">
-            </div>
+    <div class="card__img">
+        <img :src="`/img/${cardImgSrc}`" alt="">
+        <div class="badge-container">
+            <span class="badge-discount" v-show="findDiscount() === this.discount">{{ findDiscount() }}</span>
+            <span class="badge-type" v-show="findBadgeType() === this.badge">{{ findBadgeType() }}</span>
         </div>
-
-        <div class="card__description">
-            <span class="card__description__brand">{{ cardBrand }}</span>
-            <span class="card__description__item">{{ cardName }}</span>
-            <span class="card__description__price">{{ discountPrice() }} &euro;</span> 
-            <span class="card__description__old-price" v-show="discountPrice() !== cardPrice">{{ cardPrice }} &euro;</span> 
+        <span :class="isFavorite()" class="box-heart">&hearts;</span>
+        <div class="overlay">
+            <img :src="`/img/${cardHiddenImgSrc}`" alt="">
         </div>
     </div>
+
+    <div class="card__description">
+        <span class="card__description__brand">{{ cardBrand }}</span>
+        <span class="card__description__item">{{ cardName }}</span>
+        <span class="card__description__price">{{ discountPrice() }} &euro;</span> 
+        <span class="card__description__old-price" v-show="discountPrice() !== cardPrice">{{ cardPrice }} &euro;</span> 
+    </div>
+    
 
 </template>
 
@@ -124,19 +123,16 @@
     @use '../../style/partials/variables' as *;
 
 
-    .card{
+
+
+    .card__img{
         position: relative;
-        margin-bottom: 20px;
+        display: flex;
         &:hover{
             .overlay{
                 opacity: 1;
             }
         }
-    }
-
-    .card__img{
-        position: relative;
-        display: flex;
     }
 
     .overlay {
@@ -152,10 +148,12 @@
 
 
     .badge-container{
-        padding: 5px;
         color: white;
         position: absolute;
         display: flex;
+        width: 100%;
+        justify-content: flex-start;
+        gap: 10px;
         bottom: 50px;
         z-index: 99;
     }
