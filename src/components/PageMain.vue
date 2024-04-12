@@ -117,6 +117,7 @@
                     }
                 ]
                 */
+                index: 0,
             }
         },
         
@@ -151,6 +152,7 @@
                      :cardNewPrice="card.price"
                      :cardBadges="card.badges"
                      :cardFavorite="card.isInFavorites"
+                     :cardIndex="i"
                     ></CardBoolando>
                     
                 </div>

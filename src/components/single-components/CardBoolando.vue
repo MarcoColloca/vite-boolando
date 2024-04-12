@@ -1,4 +1,6 @@
 <script>
+    import { store } from '../../store'
+
     export default{
         props: {
             cardImgSrc: String,
@@ -8,13 +10,16 @@
             cardPrice: Number,
             cardBadges: Array,
             cardFavorite: Boolean,
+            cardIndex: Number,
         },
         
         data(){
             return{
+                store,
                 test: 'test',
                 discount: '',
                 badge: '',
+                index: 0,
             }
         },
 
@@ -26,6 +31,18 @@
                 if(this.cardFavorite === true){
                     return 'text-red'
                 }
+            },
+
+            // funzione che sfrutta il collegamento allo store per cambiare il valore isInFavorites
+            toggleFavorite(index){
+                
+
+                store.products[index].isInFavorites = !store.products[index].isInFavorites
+
+                //store.products[i].isInFavorites = !store.products[i].isInFavorites
+                //console.log(store.products[i].id, i+1)
+                
+                
             },
 
             //funzione che ciclando gli oggetti contenuti nell'Array cardBadges trova gli oggetti con una chiave che abbia valore tag e ritorna il valore della chiave value dell'oggetto stesso
@@ -105,7 +122,7 @@
                 <span class="badge-discount" v-show="findDiscount() === this.discount">{{ findDiscount() }}</span>
                 <span class="badge-type" v-show="findBadgeType() === this.badge">{{ findBadgeType() }}</span>
             </div>
-            <span :class="isFavorite()" class="box-heart">&hearts;</span>
+            <span :class="isFavorite()" class="box-heart" @click="toggleFavorite(cardIndex)">&hearts;</span>
             <div class="overlay">
                 <img :src="`/img/${cardHiddenImgSrc}`" alt="">
             </div>
