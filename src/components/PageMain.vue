@@ -161,4 +161,12 @@
         padding: 40px 0px;
     }
 
+    .page-main__box-card{
+
+        & .col-4{
+            padding: 10px;
+            margin-bottom: 5px;
+        }
+    }
+
 </style>
