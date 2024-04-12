@@ -23,7 +23,7 @@
 
             isFavorite(){
                 
-                console.log(this.cardFavorite)
+                //console.log(this.cardFavorite)
 
                 if(this.cardFavorite === true){
                     return 'text-red'
@@ -82,7 +82,11 @@
                     discount = 0;
                 }
 
-                return (this.cardPrice - discount).toFixed(2)
+                if(discount !== 0){
+                    return (this.cardPrice - discount).toFixed(2)
+                }else {
+                    return this.cardPrice
+                }
             },
 
         }
@@ -109,7 +113,7 @@
             <span class="card__description__brand">{{ cardBrand }}</span>
             <span class="card__description__item">{{ cardName }}</span>
             <span class="card__description__price">{{ discountPrice() }} &euro;</span> 
-            <span class="card__description__old-price">{{ cardPrice }} &euro;</span> 
+            <span class="card__description__old-price" v-show="discountPrice() !== cardPrice">{{ cardPrice }} &euro;</span> 
         </div>
     </div>
 
