@@ -130,7 +130,7 @@
     
         <div class="card__description">
             <span class="card__description__brand">{{ cardBrand }}</span>
-            <span class="card__description__item" >{{ cardName }}</span>
+            <span class="card__description__item" @click="$emit('showProduct')">{{ cardName }}</span>
             <span class="card__description__price">{{ discountPrice() }} &euro;</span> 
             <span class="card__description__old-price" v-show="discountPrice() !== cardPrice">{{ cardPrice }} &euro;</span> 
         </div>
