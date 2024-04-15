@@ -130,7 +130,7 @@
     
         <div class="card__description">
             <span class="card__description__brand">{{ cardBrand }}</span>
-            <span class="card__description__item">{{ cardName }}</span>
+            <span class="card__description__item" >{{ cardName }}</span>
             <span class="card__description__price">{{ discountPrice() }} &euro;</span> 
             <span class="card__description__old-price" v-show="discountPrice() !== cardPrice">{{ cardPrice }} &euro;</span> 
         </div>
@@ -145,17 +145,17 @@
         position: relative;
         margin-bottom: 20px;
 
-        &:hover{
-            .overlay{
-                opacity: 1;
-            }
-        }
     }
 
 
     .card__img{
         position: relative;
-        display: flex;      
+        display: flex;  
+        &:hover{
+            .overlay{
+                opacity: 1;
+            }
+        }    
     }
 
     .overlay {
@@ -217,6 +217,12 @@
     .card__description__item{
         font-weight: bold;
         font-size: 17px;
+        max-width: fit-content;
+        &:hover{
+            cursor: pointer;
+            background-color: black;
+            color: white;
+        }
     }
 
     .card__description__price{
