@@ -1,7 +1,12 @@
 <script>
     import { store } from '../../store'
+    import ProductModal from './ProductModal.vue';
 
     export default{
+        components:{
+            ProductModal,
+        },
+
         props: {
             cardImgSrc: String,
             cardHiddenImgSrc: String,
@@ -20,6 +25,8 @@
                 discount: '',
                 badge: '',
                 index: 0,
+                isOpen: false,
+                
             }
         },
 
@@ -130,10 +137,20 @@
     
         <div class="card__description">
             <span class="card__description__brand">{{ cardBrand }}</span>
-            <span class="card__description__item" @click="$emit('showProduct')">{{ cardName }}</span>
+            <span class="card__description__item" @click="isOpen = true">{{ cardName }}</span>
             <span class="card__description__price">{{ discountPrice() }} &euro;</span> 
             <span class="card__description__old-price" v-show="discountPrice() !== cardPrice">{{ cardPrice }} &euro;</span> 
         </div>
+
+        <ProductModal
+         :open="this.isOpen"
+         :name="cardName"
+         :brand="cardBrand"
+         :price="discountPrice()"
+         :image="cardHiddenImgSrc"
+         @closeModal="this.isOpen = false"
+         
+        ></ProductModal>
     </div>    
 </template>
 
