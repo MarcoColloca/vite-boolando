@@ -4,7 +4,7 @@ import cors from 'cors';
 
 // Crea l'istanza del server JSON
 const server = jsonServer.create();
-const router = jsonServer.router('./db.json');
+const router = jsonServer.router('./src/db.json');
 const middlewares = jsonServer.defaults();
 
 // Usa CORS per gestire le richieste cross-origin
