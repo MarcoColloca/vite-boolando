@@ -2,14 +2,19 @@
 import jsonServer from 'json-server';
 import cors from 'cors';
 
-export default function handler(req, res) {
-  const server = jsonServer.create();
-  const router = jsonServer.router('./db.json');
-  const middlewares = jsonServer.defaults();
+// Crea l'istanza del server JSON
+const server = jsonServer.create();
+const router = jsonServer.router('./db.json');
+const middlewares = jsonServer.defaults();
 
-  server.use(cors());
-  server.use(middlewares);
-  server.use(router);
+// Usa CORS per gestire le richieste cross-origin
+server.use(cors({
+  origin: '*', // Permette tutte le origini
+  methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+  allowedHeaders: 'Content-Type, Authorization',
+}));
 
-  server(req, res);
-}
+server.use(middlewares);
+server.use(router);
+
+export default (req, res) => server(req, res);
